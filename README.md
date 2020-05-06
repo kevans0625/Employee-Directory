@@ -1,5 +1,5 @@
 # Employee-Directory
-A React Empolyee Directory application. This applications to breaks up the UI into components, manages component state, and responds to user events. 
+A React Employee Directory application. This applications breaks up the UI into components, manages component state, and responds to user events. 
 
 ## What it is
 This application allows users view an entire employee directory at once and filter by employee names. 
