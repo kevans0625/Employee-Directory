@@ -2,7 +2,8 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Search from "./components/Search";
-import Table from "./components/Table";
+import RowData from "./components/RowData";
+
 
 
 const App = () => {
@@ -10,10 +11,10 @@ const App = () => {
     return ( <div>
         <Header>
         </Header>   
-        <Search>
-        </Search>
-        <Table>
-        </Table>
+        {/* <Search>
+        </Search> */}
+        <RowData>
+        </RowData>
         </div>
     );
 };
