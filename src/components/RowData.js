@@ -36,6 +36,38 @@ class RowData extends Component {
           }
         )
     }
+
+    handleInputChange = e => {
+      const value = e.target.value;
+      const name = e.target.name;
+      let searchArray;
+      searchArray = ([...this.state.results]);
+      const searchValue = this.searchEmployee(searchArray, value)
+      this.setState({
+          [name]: value,
+          searchResult: searchValue,
+      });
+    };
+
+    searchEmployee = (arr, value) => {
+        console.log(value);
+        console.log(arr);
+        const directory = arr.filter(employee => {
+           return (employee.email.includes(value) || employee.cell.includes(value))
+        })
+        // .then((directory)=>this.setState({results: directory}))
+        this.setState({results: directory});
+    }
+    handleFormSubmit = value => {
+      console.log(value)
+      const { error, search, results } = this.state;
+      // event.preventDefault();
+      // this.searchEmployees(this.state.search);
+      const change = results.filter(result => results.email.includes(value))
+      //  };
+       this.setState({ results: change })
+    };
+
       
    render() {
       const { error, results } = this.state;
