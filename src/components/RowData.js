@@ -68,7 +68,41 @@ class RowData extends Component {
        this.setState({ results: change })
     };
 
+    handleAscend = () => {
+      this.handleSortChange()
+      }
+      handleSortChange = () => {
+  
+      const change = this.state.results.sort(function (name1, name2) {
+           // Sort by names
+           // If the first item has a higher number, move it down
+           // If the first item has a lower number, move it up
+           if (name1.name.first > name2.name.first) return -1;
+           if (name1.name.first < name2.name.first) return 1;
+          //  console.log(name1)
+          //  console.log(name2)
+           
+          });
+          this.setState({ results: change })
+        //  console.log(this.state.results.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1));
+         //console.log(this.state.results.map(name => name.name.first));
+        //let sortedData = this.state.results.sort();
+        //this.setState({results: sortedData});
+  
+      }
+      handleDescend = () => {
+        this.handleSort()
+      }
+      handleSort = () => {
+    
+        const change = this.state.results.sort(function (name1, name2) {
       
+             if (name1.name.first < name2.name.first) return -1;
+             
+            });
+            this.setState({ results: change });
+    
+      }
    render() {
       const { error, results } = this.state;
   
