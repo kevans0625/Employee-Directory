@@ -7,7 +7,7 @@ function Header() {
         <div className= "jumbotron jumbotron-fluid" >
         <div className = "container" >
         <h1 className= "display-4"> Employee Directory </h1>
-        <p className = "lead" > This is a modified jumbotron that occupies the entire horizontal space of its parent. </p>
+        <p className = "lead" > Use the the search field and arrows to sort through the directory. </p>
          
         </div> 
          </div > </div >
