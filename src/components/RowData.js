@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../utils/API";
+
 import Search from "./Search";
 
 class RowData extends Component {
@@ -53,7 +53,8 @@ class RowData extends Component {
         console.log(value);
         console.log(arr);
         const directory = arr.filter(employee => {
-           return (employee.email.includes(value) || employee.cell.includes(value))
+
+           return (employee.email.includes(value) || employee.dob.date.includes(value) || employee.email.includes(value) ||  employee.cell.includes(value))
         })
         // .then((directory)=>this.setState({results: directory}))
         this.setState({results: directory});
@@ -134,20 +135,20 @@ class RowData extends Component {
           </tr>
         </thead>
               <tbody>
-                {results.map(result => (
-                  <tr key={result.login.uuid}>
+         {results.map(result => (
+              <tr key={result.login.uuid}>
               <th scope="row"><img alt={result.name.first} src={result.picture.thumbnail}/></th>
                 <td>{result.name.first} {result.name.last}</td>
                 <td>{result.email}</td>
                 <td>{result.cell}</td>
                 <td>{result.dob.date}</td> 
-              </tr> ))}
+              </tr> 
+              ))}
                 </tbody>
             </table>
             </div>
             </div>
-            )
-   }
+  )}
        
     }
 export default RowData;
