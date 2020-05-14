@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import moment from 'moment';
 import Search from "./Search";
 
 class RowData extends Component {
@@ -145,7 +145,7 @@ class RowData extends Component {
                 <td>{result.name.first} {result.name.last}</td>
                 <td>{result.email}</td>
                 <td>{result.cell}</td>
-                <td>{result.dob.date}</td> 
+                <td>{moment(result.dob.date).format('MM/DD/YYYY')}</td> 
               </tr> 
               ))}
                 </tbody>
