@@ -61,15 +61,17 @@ class RowData extends Component {
         // .then((directory)=>this.setState({results: directory}))
         this.setState({results: directory});
     }
-    handleFormSubmit = value => {
-      console.log(value)
-      const { error, search, results } = this.state;
-      // event.preventDefault();
-      // this.searchEmployees(this.state.search);
-      const change = results.filter(result => results.email.includes(value))
-      //  };
-       this.setState({ results: change })
-    };
+    // handleFormSubmit = () => {
+    //   // console.log(value)
+    //   // const { error, search, results } = this.state;
+    //   // // event.preventDefault();
+    //   // // this.searchEmployees(this.state.search);
+    //   // const change = results.filter(result => results.email.includes(value))
+    //   // //  };
+    //   //  this.setState({ results: change })
+
+    //   this.handleInputChange()
+    // };
 
     handleAscend = () => {
       this.handleSortChange()
@@ -114,7 +116,7 @@ class RowData extends Component {
           <Search
           value={this.state.search}
           handleInputChange={this.handleInputChange}
-          handleFormSubmit={this.handleFormSubmit}
+          // handleFormSubmit={this.handleInputChange}
         />
         <div className="container">
         <table className="table table-sm">
