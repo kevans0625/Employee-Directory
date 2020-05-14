@@ -53,7 +53,9 @@ class RowData extends Component {
         console.log(value);
         console.log(arr);
         const directory = arr.filter(employee => {
-
+          if (value ===""){
+            this.loadEmployees(); 
+          }
            return (employee.email.includes(value) || employee.dob.date.includes(value) || employee.email.includes(value) ||  employee.cell.includes(value))
         })
         // .then((directory)=>this.setState({results: directory}))
